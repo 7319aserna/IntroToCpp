@@ -21,13 +21,36 @@ void arrayOfNumbers(int numbers[], int size) {
 		std::cout << std::endl;
 	}
 }
+
+
+// Returns the sum of all numbers in the array
+
+int findIndex(int numbers[], int size, int value, int start)
+{
+	// Loop through the array
+	for (int i = 0; i < size; i++)
+	{
+		// Find the first instance of the value I'm looking for and return it
+		if (numbers[i] == value)
+		{
+			return i;
+		}
+	}
+
+	// If the array had been exhausted, return -1
+	return -1;
+}
 */
 
-// Sum of Array
-void sumOfArray(int numbers[], int size) {
-
-	if (size = 6)
+// Reverse
+void reverse(int numbers[], int size)
+{
+	for (int i = size / 2; i < size; i++)
 	{
-		
+		int dstIdx = size - i - 1;
+
+		int temp = numbers[i];
+		numbers[i] = numbers[dstIdx];
+		numbers[dstIdx] = temp;
 	}
 }
