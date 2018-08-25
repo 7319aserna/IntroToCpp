@@ -114,6 +114,10 @@ void printPlayerOneAndTwoInput(player target)
 	std::cout << " " << std::endl;
 	std::cout << "Player One, you are X, Player Two, you are Y." << std::endl;
 	std::cout << "Player One, pick a Letter, then a Number" << std::endl;
-
-//.	if (playerOne)
+	threeByThreeGrid;
 }
+
+char threeByThreeGrid[11][11] = { {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+								  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+								  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '}, 
+								  {'-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'}, };

@@ -18,14 +18,14 @@ struct player
 	char piece;
 };
 
+/*
 struct test
 {
 	char Alexis[5][5] = { {} , {} , {} , {} , {} };
 	int Paul[5][5] = { {} , {} , {} , {} , {} };
 	grid Terry[5][5] = { {} , {} , {} , {} , {} };
 }
+*/
 
-/*
 void printGrid(grid target);
 void printPlayerOneAndTwoInput(player target);
-*/
