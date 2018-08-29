@@ -2,9 +2,9 @@
 
 #include "Tic-Tac-Toe.h"
 
+/*
 int main()
 {
-	/*
 	char paul[5][6] = { { 0, 't', 0, 0, 0, 0 } ,
 						{ 0, 0, 0, 0, 0, 0 } ,
 						{ 0, 0, 0, 0, 0, 0 } , 
@@ -29,12 +29,12 @@ int main()
 	alexis = 0;
 	alexis = david;
 	alexis = paul[3][5];
-	*/
 
 	player test = {};
 
 	printPlayerOneAndTwoInput(test);
 
-	return 0;
 
+	return 0;
 }
+*/
