@@ -2,6 +2,7 @@
 
 #include "Tic-Tac-Toe.h"
 
+/*
 void printGrid(grid target)
 {
 	int columns = 0;
@@ -102,23 +103,35 @@ void printGrid(grid target)
 		}
 	}
 }
+*/
 
-void printPlayerOneAndTwoInput(player target)
+void printGridThreeByThreeTest(GridThreeByThreeTest target)
 {
-	grid test = {};
-	printGrid(test);
+	int columns = 3;
+	int rows = 3;
+	
+	std::cout << "Grid: " << columns << "x" << rows << std::endl;
 
-	int playerOne;
-	int playerTwo;
+	char threeByThreeGrid[33][33] = { {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+									  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+									  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+									  {'-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'},
+									  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+								      {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+									  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+								      {'-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'},
+								      {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+								      {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+								      {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '}};
 
-	std::cout << " " << std::endl;
-	std::cout << "Player One, you are X, Player Two, you are Y." << std::endl;
-	std::cout << "Player One, pick a Letter, then a Number" << std::endl;
-	//threeByThreeGrid[11][11] = {};
+	for (int i = 0; i < 33; i++)
+	{
+		for (int n = 0; n < 33; n++)
+		{
+			std::cout << threeByThreeGrid[i][n];
+		}
+		std::cout << std::endl;
+		continue;
+	}
+
 }
-
-/*char threeByThreeGrid[11][11] = { {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
-								  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '},
-								  {' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' '}, 
-								  {'-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'}, };
-								  */

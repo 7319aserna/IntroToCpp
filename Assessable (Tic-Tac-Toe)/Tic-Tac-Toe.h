@@ -9,23 +9,13 @@ struct grid
 	int rows;
 };
 
-struct player
+struct GridThreeByThreeTest
 {
-	// The amount of players in the game
-	int playerOne;
-	int playerTwo;
-	// The letter of the piece the player selected
-	char piece;
+	// The amount of columns in the grid
+	int columns;
+	// The amount of rows in the grid.
+	int rows;
 };
 
-/*
-struct test
-{
-	char Alexis[5][5] = { {} , {} , {} , {} , {} };
-	int Paul[5][5] = { {} , {} , {} , {} , {} };
-	grid Terry[5][5] = { {} , {} , {} , {} , {} };
-}
-*/
-
-void printGrid(grid target);
-void printPlayerOneAndTwoInput(player target);
+//void printGrid(grid target);
+void printGridThreeByThreeTest(GridThreeByThreeTest target);
