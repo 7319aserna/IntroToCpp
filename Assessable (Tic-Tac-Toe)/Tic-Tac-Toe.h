@@ -8,14 +8,19 @@ struct grid
 	// The amount of rows in the grid.
 	int rows;
 };
+//void printGrid(grid target);
 
-struct GridThreeByThreeTest
+struct gridThreeByThree
 {
 	// The amount of columns in the grid
 	int columns;
 	// The amount of rows in the grid.
 	int rows;
 };
+void printGridThreeByThree(gridThreeByThree target);
 
-//void printGrid(grid target);
-void printGridThreeByThreeTest(GridThreeByThreeTest target);
+struct playerOneAndTwoInput
+{
+	int test;
+};
+void printPlayerOneAndTwoInput(playerOneAndTwoInput target);
