@@ -134,6 +134,6 @@ void printPlayerOneAndTwoInput(playerOneAndTwoInput target)
 
 	std::cout << "Now, chose who is Player One and Player Two." << std::endl;
 	std::cout << std::endl;
-	std::cout << "Alright, Player One, your piece is the 'x'. Player Two, your piece is the 'y'. Now Player One, choose a number that is displayed on the grid above and then press enter to continue after you have made your selection." << std::endl;
+	std::cout << "Alright, Player One, your piece is the 'x'. Player Two, your piece is the 'y'." << std::endl << "Now Player One, choose a number that is displayed on the grid above and then press enter to continue after you have made your selection." << std::endl;
 
 }
