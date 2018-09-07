@@ -4,8 +4,8 @@
 
 int main()
 {
-	playerOneAndTwoInput pOneAndTwo = {};
-	printPlayerOneAndTwoInput(pOneAndTwo);
+	player pOneAndTwo = {};
+	printPlayer(pOneAndTwo);
 
 	return 0;
 }
