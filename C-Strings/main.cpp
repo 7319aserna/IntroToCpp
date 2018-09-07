@@ -48,15 +48,61 @@ int main()
 	*/
 
 	// To Upper)
-	int lcAndUcASCIIvalDiff = ' ';
-	int lowercaseNumberASCIIval = 'a';	// This is '97'
-	int uppercaseNumberASCIIval = 'A';	// This is '65'
+	/*
+	char lowercaseASCIIval = 'a';	// This is '97'
+	char uppercaseASCIIval = 'A';	// This is '65'
 
-	if (lowercaseNumberASCIIval != uppercaseNumberASCIIval) {
-		lowercaseNumberASCIIval + lcAndUcASCIIvalDiff;
+	if (lowercaseASCIIval != uppercaseASCIIval) {
+		lowercaseASCIIval -= 32;
+
+		std::cout << lowercaseASCIIval << std::endl;
+	}
+	*/
+
+	/*
+	// One Letter
+	char ASCIIvalWOneLetter;	// User inputs their own letter
+	char UserInputPromptWOneLetter[15] = "Enter a letter";
+
+	std::cout << UserInputPromptWOneLetter << std::endl;
+	std::cin >> ASCIIvalWOneLetter;
+
+	if (ASCIIvalWOneLetter) {
+
+		ASCIIvalWOneLetter -= 32;
+
+		std::cout << ASCIIvalWOneLetter << std::endl;
+	}
+	*/
+
+	// Two Letters
+	char ASCIIvalWTwoLetters[2];	// User inputs their own two letters
+	char ASCIIvalFirstNumber;
+	char ASCIIvalSecondNumber;
+	char UserPromptWFirstLetter[23] = "Enter the first letter";
+	char UserPromptWSecondLetter[24] = "Enter the second letter";
+	
+	std::cout << UserPromptWFirstLetter << std::endl;
+	std::cin >> ASCIIvalFirstNumber;
+	
+	if (ASCIIvalFirstNumber) {
+
+		ASCIIvalFirstNumber -= 32;
 	}
 
-	std::cout << lowercaseNumberASCIIval << std::endl;
+	std::cout << UserPromptWSecondLetter << std::endl;
+	std::cin >> ASCIIvalSecondNumber;
+
+	if (ASCIIvalSecondNumber) {
+
+		ASCIIvalSecondNumber -= 32;
+	}
+
+	ASCIIvalFirstNumber == ASCIIvalSecondNumber;
+
+	if (ASCIIvalFirstNumber == ASCIIvalSecondNumber) {
+		ASCIIvalFirstNumber && ASCIIvalSecondNumber = ASCIIvalWTwoLetters;
+	}
 
 	return -1;
 }
