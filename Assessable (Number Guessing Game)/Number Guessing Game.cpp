@@ -4,7 +4,8 @@
 //void printCalculateDifference(calculateDifference target) {
 //	int rangeMin;
 //	int rangeMax;
-//	
-//	int rangeMinMinusMax = rangeMax - rangeMin;
-//	int rangeDifference = rangeMinMinusMax / 2;
+//
+//	int rangeMaxMinusMin = rangeMax - rangeMin;
+//	int rangeMMMDividedByTwo = rangeMaxMinusMin / 2;
+//	int rangeDifference = rangeMMMDividedByTwo + rangeMin;
 //}
