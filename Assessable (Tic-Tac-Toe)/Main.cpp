@@ -7,5 +7,7 @@ int main()
 	player pOneAndTwo = {};
 	printPlayer(pOneAndTwo);
 
+	//uiguiguigdigiudggdxgigdigdiuguidguigdig
+
 	return 0;
 }
