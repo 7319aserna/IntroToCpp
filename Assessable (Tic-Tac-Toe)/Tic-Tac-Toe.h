@@ -1,22 +1,16 @@
 #pragma once
 
 // Declaring a struct
-struct gridThreeByThree
+struct threeByThreeGrid
 {
-	char threeByThreeGrid[3][3] = {};
-	// The amount of columns in the grid
-	int columns;
-	// The amount of rows in the grid.
-	int rows;
+	char gridThreeByThree;
 };
-void printGridThreeByThree(gridThreeByThree target);
+void printThreeByThreeGrid(threeByThreeGrid &target);
 
-struct player
-{
-	// Player One's piece will be "X"
-	char playerOnePiece;
-	// Player Two's piece will be "O"
-	char playerTwoPiece;
-	
+struct playerOneAndTwoInput {
 };
-void printPlayer(player target);
+void printPlayerOneAndTwoInput(playerOneAndTwoInput &target);
+
+struct playerOneAndTwoRepeatProcess {
+};
+void printPlayerOneAndTwoRepeatProcess(playerOneAndTwoRepeatProcess &target);

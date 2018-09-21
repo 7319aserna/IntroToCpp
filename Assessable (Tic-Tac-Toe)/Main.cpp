@@ -4,10 +4,7 @@
 
 int main()
 {
-	player pOneAndTwo = {};
-	printPlayer(pOneAndTwo);
-
-	//uiguiguigdigiudggdxgigdigdiuguidguigdig
-
+	playerOneAndTwoRepeatProcess pOATRP;
+	printPlayerOneAndTwoRepeatProcess(pOATRP);
 	return 0;
 }
