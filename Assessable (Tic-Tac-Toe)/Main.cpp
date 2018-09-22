@@ -4,7 +4,7 @@
 
 int main()
 {
-	playerOneAndTwoRepeatProcess pOATRP;
-	printPlayerOneAndTwoRepeatProcess(pOATRP);
+	playerOneAndTwoInput pOATI;
+	printPlayerOneAndTwoInput(pOATI);
 	return 0;
 }
