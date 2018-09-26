@@ -5,6 +5,35 @@
 #include <stdio.h>
 #include "Closed_Exercises.h"
 
+std::string closedExercisesRead(std::string filePath)
+{
+	std::fstream file;
+
+	// open a file relative to the working directory of the project
+	file.open(filePath.c_str(), std::ios::in | std::ios::binary);
+
+	// verify that the file is open
+	if (file.fail())
+	{
+		std::cerr << "File not found." << std::endl;
+		return "";
+	}
+	std::string buffer;
+
+	while (std::getline(file, buffer))  // iterates until error or EOF
+	{
+		// we don't really need to do anything while reading
+	}
+
+	// reset error flags (such as EOF)
+	file.clear();
+
+	// close and release the file
+	file.close();
+
+	return buffer;
+}
+
 bool closedExercisesWrite(std::string filePath, std::string message) {
 	std::fstream file;
 
@@ -29,7 +58,7 @@ bool closedExercisesWrite(std::string filePath, std::string message) {
 
 void printDeleteFile(deleteFile target) {
 	if (remove("save_Data.bin") != 0)
-		perror("Error deleting file");
+		perror("No File Was Found");
 	else
 		puts("File successfully deleted");
 }
@@ -62,8 +91,8 @@ void printSaveData(saveData target) {
 
 	double timePlayed; // Given in seconds
 
-	cout << "Hello Adventurer! What is your name?" << endl;
-	cin >> playerName;
+	/*cout << "Hello Adventurer! What is your name?" << endl;
+	cin >> playerName;*/
 
 	srand((int)time(0));
 	int i = 0;
@@ -90,5 +119,6 @@ void printSaveData(saveData target) {
 	std::string deepestFloorString = deathcountString + '\n' + "Deepest Floor: " + deepestFloorIntToString;
 	std::string timePlayedString = deepestFloorString + '\n' + "Time Played: " + timePlayedDoubleToString;
 
-	closedExercisesWrite("save_Data.bin", timePlayedString);
+	closedExercisesWrite("save_Data.bin", playerNameString);
+	cout << closedExercisesRead("save_Data.bin");
 }
