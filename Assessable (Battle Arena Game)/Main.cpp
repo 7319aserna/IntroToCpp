@@ -4,15 +4,35 @@
 
 using namespace::std;
 
+void simulateBattle(const heroes &attacker, heroes &defender) {
+	heroes aAndD;
+	int test;
+
+	aAndD.name = "Iron Man";
+
+	defender.health -= attacker.attackPower;
+	
+	//if (aAndD.name == "Iron Man" && aAndD.health <= 0) { //&& "War Machine" && "Black Widow" && "Black Panther" && "Vision") {
+	//	if (aAndD.health <= 0) {
+	//		cout << "Team Captain America Wins!!!" << endl;
+	//		cin >> test;
+	//	}
+	//}
+
+	cout << attacker.name << " attacks " << defender.name << " and does " << attacker.attackPower << " in damage!" << endl;
+	cout << defender.name << "'s Health Remaining: " << defender.health << '\n';
+}
+
 int main() {
 
-	bool turn_Team_Iron_Man;
-	bool turn_Team_Captain_America;
-	int hero_Or_Heroine;
+	// If true, then Team Iron Man goes first, if false, then Team Captain America goes
+	bool heroesTurn;
+	int team_Iron_Man_hero_Or_Heroine;
+	int team_Captain_America_hero_Or_Heroine;
 	int turn = 0;
 
 	// Make the array of heroes
-	Team_Iron_Man team_Iron_Man_Array[] = {
+	heroes team_Iron_Man_Array[] = {
 		{ "Iron Man", 25, 100 },
 		{ "Spider Man", 10, 100 },
 		{ "War Machine", 15, 100 },
@@ -21,7 +41,7 @@ int main() {
 		{ "Vision", 18, 100 },
 	};
 
-	Team_Iron_Man team_Captain_America_Array[] = {
+	heroes team_Captain_America_Array[] = {
 		{ "Captain America", 25, 100 },
 		{ "Hawkeye", 12, 100 },
 		{ "Falcon", 15, 100 },
@@ -35,9 +55,6 @@ int main() {
 	for (int i = 0; i < 6; ++i)
 	{
 		printHero(team_Iron_Man_Array[i]);
-		/*if (i == 0){
-		printHero(team_Iron_Man_Array[i]);
-		}*/
 	}
 
 	cout << '\n' << "v.s." << endl;
@@ -49,29 +66,84 @@ int main() {
 	}
 
 	turn++;
-	cout << '\n' << "Turn: " << turn << endl;
+	srand((int)time(0));
+	heroesTurn = true;
 
-	turn_Team_Iron_Man = true;
-
-	if (turn_Team_Iron_Man == true) {
-		srand((int)time(0));
+	if (heroesTurn == true) {
 		int i = 0;
 
-		while (i++ < 1) {
-			Team_Iron_Man tIMFight;
-			Team_Captain_America tCAFight;
+		while (true) {
+			while (i == 0) {
 
-			hero_Or_Heroine = (rand() % 6) + 1;
-			printHero(team_Iron_Man_Array[hero_Or_Heroine]);
+				cout << '\n' << "Turn: " << turn << endl;
 
-			cout << "v.s." << endl;
+				team_Iron_Man_hero_Or_Heroine = (rand() % 5);
+				team_Captain_America_hero_Or_Heroine = (rand() % 5);
 
-			printHero(team_Captain_America_Array[hero_Or_Heroine]);
+				// This would check if anyone from Team Iron Man is defeated
+				if (team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine].health <= 0) {
+					cout << team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine].name << " is already defeated!!!" << endl;
+					continue;
+				}
 
-			cout << "When ready, press enter to continue." << endl;
-			(cin.get() == '\n');
+				// This would check if anyone from Team Captain America is defeated
+				if (team_Captain_America_Array[team_Captain_America_hero_Or_Heroine].health <= 0) {
+					cout << team_Captain_America_Array[team_Captain_America_hero_Or_Heroine].name << " is already defeated!!!" << endl;
+					continue;
+				}
 
+				printHero(team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine]);
+
+				cout << "v.s." << endl;
+
+				printHero(team_Captain_America_Array[team_Captain_America_hero_Or_Heroine]);
+
+				cout << '\n' << "When ready, press enter to continue." << endl;
+				(cin.get() == '\n');
+
+				
+				simulateBattle(team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine], team_Captain_America_Array[team_Captain_America_hero_Or_Heroine]);
+
+				turn++;
+				i=1;
 			}
+
+			while (i == 1) {
+
+				cout << '\n' << "Turn: " << turn << endl;
+
+				team_Captain_America_hero_Or_Heroine = (rand() % 5);
+				team_Iron_Man_hero_Or_Heroine = (rand() % 5);
+				
+				// This would check if anyone from Team Captain America is defeated
+				if (team_Captain_America_Array[team_Captain_America_hero_Or_Heroine].health <= 0) {
+					cout << team_Captain_America_Array[team_Captain_America_hero_Or_Heroine].name << " is already defeated!!!" << endl;
+					continue;
+				}
+
+				// This would check if anyone from Team Iron Man is defeated
+				if (team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine].health <= 0) {
+					cout << team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine].name << " is already defeated!!!" << endl;
+					continue;
+				}
+
+				printHero(team_Captain_America_Array[team_Captain_America_hero_Or_Heroine]);
+
+				cout << '\n' << "v.s." << endl;
+
+				printHero(team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine]);
+
+				cout << '\n' << "When ready, press enter to continue." << endl;
+				(cin.get() == '\n');
+
+				simulateBattle(team_Captain_America_Array[team_Captain_America_hero_Or_Heroine], team_Iron_Man_Array[team_Iron_Man_hero_Or_Heroine]);
+
+				turn++;
+				i=0;
+
+				continue;
+			}
+		}
 	}
 	return 0;
 }

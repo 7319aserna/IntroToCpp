@@ -91,8 +91,8 @@ void printSaveData(saveData target) {
 
 	double timePlayed; // Given in seconds
 
-	/*cout << "Hello Adventurer! What is your name?" << endl;
-	cin >> playerName;*/
+	cout << "Hello Adventurer! What is your name?" << endl;
+	cin >> playerName;
 
 	srand((int)time(0));
 	int i = 0;
@@ -119,6 +119,8 @@ void printSaveData(saveData target) {
 	std::string deepestFloorString = deathcountString + '\n' + "Deepest Floor: " + deepestFloorIntToString;
 	std::string timePlayedString = deepestFloorString + '\n' + "Time Played: " + timePlayedDoubleToString;
 
-	closedExercisesWrite("save_Data.bin", playerNameString);
+	closedExercisesWrite("save_Data.bin", timePlayedString);
 	cout << closedExercisesRead("save_Data.bin");
 }
+
+// Monster Creature Quest (MCQ)
