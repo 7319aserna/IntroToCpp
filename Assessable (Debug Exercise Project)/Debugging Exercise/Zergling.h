@@ -3,11 +3,9 @@
 class Zergling
 {
 public:
-	Zergling();
-	~Zergling();
+	bool alienAlive;
 
-	int attack();
-	void takeDamage(int damage);
-
+	int attack;
+	int health = 100;
 };
 

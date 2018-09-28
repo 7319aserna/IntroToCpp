@@ -1,87 +1,96 @@
-// A Debugging Exercise by Marc Chee (marcc@aie.edu.au)
-// 18/12/2016
-
-// Marines are trying to "de-bug" an area (haha . . . haha)
-// However something's up with this code . . . figure out what's going wrong
-// When you're finished, there should be no compiler errors or warnings
-// The encounter should also run and finish correctly as per the rules in the comments
-
-// In many cases there are differences between what's in otherwise identical sections
-// for Marines and Zerglings. It's good to be able to tell what the differences are
-// and why they might be important.
-
-// What's efficient and inefficient? Why?
-// What uses more memory and what doesn't? Why?
-
-// Last modified by Terry Nguyen (terryn@aie.edu.au)
-// 10/09/2018
-
+#include <ctime>
 #include <iostream>
 #include "Marine.h"
 #include "Zergling.h"
 
+using namespace::std;
 using std::cout;
 using std::endl;
 
 int main()
 {
-	Marine squad[10];
-	Zergling swarm[20];
+	Marine squad;
+	Zergling swarm;
 
-	cout << "A squad of marines approaches a swarm of Zerglings and opens fire! The Zerglings charge!" endl;
+	srand((int)time(0));
+
+	int squadRemaining = 0;
+	int swarmRemaining = 0;
+
+	squad.attack = (rand() % 100);
+	swarm.attack = (rand() % 100);
+
+	cout << "In this scenario, choose how many Marines and how many Zerglings will appear." << endl;
+	cout << "Marines = "; cin >> squadRemaining;
+
+	cout << endl;
+
+	cout << "Zerglings = "; cin >> swarmRemaining;
+
+	cout << '\n' << "A squad of " << squadRemaining << " marines approaches a swarm of " << swarmRemaining << " Zerglings and opens fire! The Zerglings charge!" << endl;
+	cin.ignore();
+	cout << '\n' << "Press enter to continue" << endl;
+	cin.ignore();
+
 	// Attack each other until only one team is left alive
-	while (marineAlive() || zerglingAlive(swarm)) // If anyone is left alive to fight . . .
+	while (squadRemaining > 0 && swarmRemaining > 0) // If anyone is left alive to fight . . .
 	{
-		if (marineAlive()) // if there's at least one marine alive
+		system("CLS");
+
+		squad.attack = (rand() % 100);
+		swarm.attack = (rand() % 100);
+
+		if (squadRemaining > 0) // if there's at least one marine alive
 		{
-			for (size_t i = 0; i < squadSize; i++) // go through the squad
-			{
-				// each marine will attack the first zergling in the swarm
-				cout << "A marine fires for " << squad[i].attack() << " damage. " << endl;
-				int damage = squad[i].attack();
-				swarm[0].takeDamage(damage);
-				if (!swarm[0].isAlive()) // if the zergling dies, it is marked as such
-				{
-					cout << "The zergling target dies" << endl;
-				}
+			// each marine will attack the first zergling in the swarm
+			cout << "A Marine fires for " << squad.attack << " damage. " << endl;
+			swarm.health -= squad.attack;
+			cout << "Zergling's Health: " << swarm.health;
+
+			cout << '\n' << "Press enter to continue" << endl;
+			cin.ignore();
+
+			// if the zergling dies, it is marked as such
+			if (swarm.health <= 0) {
+
+				cout << '\n' << "The Zergling target dies" << endl;
+				swarmRemaining--;
+				swarm.health = 100;
+				cout << "Swarm Remaining: " << swarmRemaining;
 			}
 		}
-		if (zerglingAlive(swarm)) // if there's at least one zergling alive
-		{
-			for (size_t i = 0; i < squadSize; i++) // loop through zerglings
-			{
-				cout << "A zergling attacks for " << i->attack() << " damage." << endl;
-				squad[0]takeDamage(i->attack());
-				if (squad[0]->isAlive())
-				{
 
-				}
-				else
-					cout << "The marine succumbs to his wounds." << endl;
-					cout << "There are ??? marines left." << endl;
-					
+		if (swarmRemaining > 0) // if there's at least one zergling alive
+		{
+			cout << "A zergling attacks for " << swarm.attack << " damage." << endl;
+			squad.health -= swarm.attack;
+			cout << "Marine's Health: " << squad.health;
+
+			cout << '\n' << "Press enter to continue" << endl;
+			cin.ignore();
+
+			// if the Marine dies, it is marked as such
+			if (squad.health <= 0) {
+
+				cout << '\n' << "The Marine target dies" << endl;
+				squadRemaining--;
+				squad.health = 100;
+				cout << "Squad Remaining: " << squadRemaining;
 			}
 		}
 	}
 
 	// Once one team is completely eliminated, the fight ends and one team wins
-	cout << "The fight is over. ";
-	if (marineAlive())
-	{
+	cout << '\n' << '\n' << "The fight is over. ";
+
+	if (squadRemaining > 0) {
 		cout << "The Marines win." << endl;
-	} else 
+	}
+
+	else if (swarmRemaining > 0) {
 		cout << "The Zerg win." << endl;
 	}
-}
 
-// Is there a Marine Alive?
-bool marineAlive()
-{
-	return false;
-}
-
-// Is there a zergling Alive
-bool zerglingAlive(Zergling * swarmArr, size_t arrSize)
-{
-	return false;
+	cout << '\n' << "Thanks for playing, when ready press enter to exit." << endl;
+	cin.ignore();
 }

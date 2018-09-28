@@ -3,11 +3,9 @@
 class Marine
 {
 public:
-	Marine();
-	~Marine();
+	bool marineAlive;
 
-	int attack();
-	void takeDamage(int damage);
-
+	int attack;
+	int health = 100;
 };
 
