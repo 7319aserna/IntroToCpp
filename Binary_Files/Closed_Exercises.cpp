@@ -170,6 +170,10 @@ void printSaveData(saveData target) {
 	closedExercisesWrite("save_Data.bin", timePlayedDoubleToString  );
 
 	closedExercisesRead("save_Data.bin");
+
+	cout << "This is the end of the closed Exercises." << '\n' << "Press Enter to continue the open section." << endl;
+	cin.ignore();
+	cin.ignore();
 }
 //--------------------------------------------------//
 
@@ -314,12 +318,6 @@ void printMonster_Creature_Quest(monster_Creature_Quest target) {
 	{"004", "Minotaur - Hey, he's pretty cool I guess...", "minotaur.bin" },
 	};
 
-	/*openExerciseRead("lamia.bin");
-	openExerciseRead("dullahan.bin");
-	openExerciseRead("wallmaster.bin");
-	openExerciseRead("mimic.bin");
-	openExerciseRead("minotaur.bin");*/
-
 	system("CLS");
 
 	cout << "Welcome to Monster Creature Quest." << '\n' << endl;
@@ -379,15 +377,26 @@ void printMonster_Creature_Quest(monster_Creature_Quest target) {
 			}
 
 			openExerciseWriteButWithoutIosOut(monsterArray[userInput].monsterFileName, "");
-
-			if (cout << "")
 		}
 
 		if (userInput == 4) {
 			cout << "Here are all of the monsters on disk: " << endl;
+
+			openExerciseWriteButWithoutIosOut(monsterArray[0].monsterFileName, "");
+			cout << endl;
+			openExerciseWriteButWithoutIosOut(monsterArray[1].monsterFileName, "");
+			cout << endl;
+			openExerciseWriteButWithoutIosOut(monsterArray[2].monsterFileName, "");
+			cout << endl;
+			openExerciseWriteButWithoutIosOut(monsterArray[3].monsterFileName, "");
+			cout << endl;
+			openExerciseWriteButWithoutIosOut(monsterArray[4].monsterFileName, "");
 		}
 
 		if (userInput == 5) {
+			cout << "Good Luck Out There!" << '\n' << "Press Enter to exit the game." << endl;
+			cin.ignore();
+			cin.ignore();
 			return;
 		}
 	}

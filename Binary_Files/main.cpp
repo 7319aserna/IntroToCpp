@@ -6,8 +6,8 @@
 
 int main() {
 
-	/*saveData sD;
-	printSaveData(sD);*/
+	saveData sD;
+	printSaveData(sD);
 
 	monster_Creature_Quest m_C_Q;
 	printMonster_Creature_Quest(m_C_Q);
