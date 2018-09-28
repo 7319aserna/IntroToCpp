@@ -21,3 +21,24 @@ void printSaveData(saveData target);
 struct deleteFile {
 };
 void printDeleteFile(deleteFile target);
+
+//--------------------------------------------------//
+
+// This Is For The Open Exercise!!!
+using namespace::std;
+
+class monster {
+public:
+	const char * id;
+	const char * name;
+	string monsterFileName;
+};
+void printMonsterOrMonsters(const monster &entity);
+
+struct monster_Creature_Quest {
+};
+void printMonster_Creature_Quest(monster_Creature_Quest target);
+
+struct deleteOpenExerciseFile {
+};
+void printDeleteOpenExerciseFile(deleteOpenExerciseFile target);

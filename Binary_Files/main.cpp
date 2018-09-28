@@ -6,11 +6,11 @@
 
 int main() {
 
-	/*hello_World h_W;
-	printHelloWorld(h_W);*/
+	/*saveData sD;
+	printSaveData(sD);*/
 
-	saveData sD;
-	printSaveData(sD);
+	monster_Creature_Quest m_C_Q;
+	printMonster_Creature_Quest(m_C_Q);
 
 	return 0;
 }
